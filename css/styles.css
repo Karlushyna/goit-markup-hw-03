@@ -9,6 +9,8 @@
   --second-background-color: #2f303a;
   --header-border-color: #ececec;
   --card-border: 1px solid #eeeeee;
+  --card-gap: 30px;
+  --card-item: 3;
 }
 body {
   font-family: 'Roboto', sans-serif;
@@ -35,10 +37,15 @@ ul {
 }
 img {
   display: block;
+  width: 100%;
+  height: auto;
 }
 button {
   border: 1px solid transparent;
   cursor: pointer;
+}
+address {
+  font-style: inherit;
 }
 
 .list {
@@ -82,6 +89,18 @@ button {
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
+}
+.card-set {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--card-gap));
+  margin-top: calc(-1 * var(--card-gap));
+}
+
+.card-set-item {
+  width: calc(100% / var(--card-item) - var(--card-gap));
+  margin-left: var(--card-gap);
+  margin-top: var(--card-gap);
 }
 
 /*------------------- HEADER---------------- */
@@ -148,7 +167,6 @@ button {
   color: var(--second-priority-color);
 }
 .hero-button {
-  margin-top: 30px;
   padding: 10px 32px;
   background: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -167,19 +185,8 @@ button {
 }
 
 /*------------------- FEATURES---------------- */
-.features-list,
-.about-list,
-.team-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -30px;
-  margin-top: -30px;
-}
-
-.features-item {
-  width: calc(100% / 4 - 30px);
-  margin-left: 30px;
-  margin-top: 30px;
+.features {
+  --card-item: 4;
 }
 .features-title {
   margin-bottom: 10px;
@@ -195,21 +202,14 @@ button {
 .about {
   padding-bottom: 94px;
 }
-.about-item {
-  width: calc(100% / 3 - 30px);
-  margin-left: 30px;
-  margin-top: 30px;
-}
 
 /*------------------- TEAM---------------- */
 .team {
   background-color: var(--background-color);
+  --card-item: 4;
 }
 
 .team-item {
-  width: calc(100% / 4 - 30px);
-  margin-left: 30px;
-  margin-top: 30px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
@@ -297,18 +297,12 @@ button {
 }
 /*------------------- PROJECTS---------------- */
 
-.project-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -30px;
-  margin-top: -30px;
-}
 .project-item {
   /* width: calc((100%-60px) / 3);
-  margin: 15px; */
+  margin: 15px; 
   width: (100%/3-60px);
-  margin-left: 30px;
-  margin-top: 30px;
+  margin-left: var(--card-gap);
+  margin-top: var(--card-gap);  */
   background: var(--second-priority-color);
 }
 
